@@ -11,7 +11,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import {Products} from '../product';c
+import {Products} from '../product';
 import Header1 from '../header';
 import {FlatList} from 'react-native-gesture-handler';
 import MyProducts from '../product/myProducts';

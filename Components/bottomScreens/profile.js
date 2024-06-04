@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 const Profile=()=>{
   return(
-    <View >
-        <Text>Profile </Text>
+    <View style={{flex:1}}>
+   
     </View>
         )
 }
