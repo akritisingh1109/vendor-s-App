@@ -8,6 +8,7 @@ import {
   useColorScheme,
   View,
   Image,
+  
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 const MyProducts1 = ({item,onRemoveToCart}) => {
