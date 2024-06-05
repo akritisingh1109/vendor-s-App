@@ -10,13 +10,16 @@ import {
   Image,TouchableOpacity
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
+
 import SignUpInput from '../signUpInput';
 import SignUpButton from '../SignUpButton';
 import { useDispatch } from 'react-redux';
 import { addAddress } from '../../redux/Actions/Action';
 const AddNewAddress=()=>{
     const navigation=useNavigation();
-   
+    const addressList=useSelector(state=>state.Reducers1);
+    // console.log(addressList)
     const [name, setName] = useState('');
     const [city, setCity] = useState('');
     const [mobile, setMobile] = useState('');

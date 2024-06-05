@@ -13,6 +13,7 @@ import {useEffect} from 'react';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import MyAddress from './myAddress';
+import MyOrders from './myOrders';
 import { useNavigation } from '@react-navigation/native';
 const Profile = () => {
   const navigation=useNavigation();
@@ -60,7 +61,10 @@ const Profile = () => {
         }}>
           <Text style={{fontSize: 19}}>My Address</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={{width:"100%",height:50,borderBottomWidth:3,borderBottomColor:"grey",marginTop:90}}>
+        <TouchableOpacity style={{width:"100%",height:50,borderBottomWidth:3,borderBottomColor:"grey",marginTop:90}}
+        onPress={()=>{
+          navigation.navigate("MyOrders");
+        }}>
           <Text style={{fontSize: 19}}>My orders</Text>
         </TouchableOpacity>
        

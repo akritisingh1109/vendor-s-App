@@ -11,24 +11,24 @@ import {
 } from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import Search from './bottomScreens/search';
+//import Search from './bottomScreens/search';
 import Main from './bottomScreens/Main';
 import Cart from './bottomScreens/Cart';
 import Profile from './bottomScreens/profile';
 import Wishlist from './bottomScreens/wishlist';
-import { useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 
 const Home = () => {
   const [selectedTab, setSelectedTab] = useState(0);
-  const data= useSelector(state => state);
+  const data = useSelector(state => state);
 
   return (
     <View style={{flex: 1}}>
       {selectedTab === 0 ? (
         <Main />
-      ) : selectedTab === 1 ? (
-        <Search />
-      ) : selectedTab === 2 ? (
+      ) : // ) : selectedTab === 1 ? (
+      //   <Search />
+      selectedTab === 2 ? (
         <Cart />
       ) : selectedTab === 3 ? (
         <Wishlist />
@@ -52,9 +52,9 @@ const Home = () => {
           }}>
           <Image
             source={require('./images/home.png')}
-            style={{width: 50, height: 50, margin: 18}}></Image>
+            style={{width: 50, height: 50, margin: 50}}></Image>
         </TouchableOpacity>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={styles.touch1}
           onPress={() => {
             setSelectedTab(1);
@@ -67,7 +67,7 @@ const Home = () => {
               margin: 18,
               marginRight: 30,
             }}></Image>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <View
           style={{
             width: '10%',
@@ -86,7 +86,7 @@ const Home = () => {
                 width: 50,
                 height: 50,
                 margin: 11,
-                marginRight: 30,
+                marginRight: 35,
                 borderRadius: 30,
               }}></Image>
             <View
@@ -101,7 +101,9 @@ const Home = () => {
                 top: 5,
                 right: 4,
               }}>
-              <Text style={{color: 'white', fontSize: 15}}>{data.Reducers.length}</Text>
+              <Text style={{color: 'white', fontSize: 15}}>
+                {data.Reducers.length}
+              </Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -113,22 +115,23 @@ const Home = () => {
           }}>
           <Image
             source={require('./images/heart.webp')}
-            style={{width: 50, height: 50, margin: 20, marginLeft: 30}}>
-            </Image>
-            <View
-              style={{
-                width: 20,
-                height: 20,
-                backgroundColor: 'red',
-                borderRadius: 8,
-                justifyContent: 'center',
-                alignItems: 'center',
-                position:"absolute",
-                top: 5,
-                left:60
-              }}>
-                <Text style={{color:"white",fontSize:15}}>{data.Reducers2.length}</Text>
-              </View>
+            style={{width: 50, height: 50, margin: 20, marginLeft: 50}}></Image>
+          <View
+            style={{
+              width: 20,
+              height: 20,
+              backgroundColor: 'red',
+              borderRadius: 8,
+              justifyContent: 'center',
+              alignItems: 'center',
+              position: 'absolute',
+              top: 5,
+              left: 60,
+            }}>
+            <Text style={{color: 'white', fontSize: 15}}>
+              {data.Reducers2.length}
+            </Text>
+          </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.touch1}

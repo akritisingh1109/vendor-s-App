@@ -16,6 +16,8 @@ import SignUp from './signup';
 import Home from './Home';
 import MyAddress from './bottomScreens/myAddress';
 import AddNewAddress from './bottomScreens/AddNewAddress';
+import Checkout from './bottomScreens/checkout';
+import MyOrders from './bottomScreens/myOrders';
 const Stack = createStackNavigator();
 const AppNavigator = () => {
   return (
@@ -51,7 +53,16 @@ const AppNavigator = () => {
           component={AddNewAddress}
           options={{headerShown: false}}
         />
-
+          <Stack.Screen
+          name="Checkout"
+          component={Checkout}
+          options={{headerShown: false}}
+        />
+             <Stack.Screen
+          name="MyOrders"
+          component={MyOrders}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
